@@ -47,10 +47,10 @@ const Header = () => {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.headerContent}>
         <div className={styles.logo}>
-          <img src="/src/assets/images/scau_logo.png" alt="华南农业大学" />
+          <img src="/src/assets/images/logo.svg" alt="华南农业大学" />
           <div className={styles.logoText}>
-            <h1>华南农业大学</h1>
-            <p>智能招生系统</p>
+            <h1>智能招生系统</h1>
+            {/* <p>智能招生系统</p> */}
           </div>
         </div>
         
@@ -92,7 +92,7 @@ const Header = () => {
           </div>
         </nav>
         
-        <button className={styles.contactBtn}>
+        <button className={styles.contactBtn} hidden>
           立即报名
           <span className={styles.btnGlow}></span>
         </button>

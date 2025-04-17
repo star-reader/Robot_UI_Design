@@ -104,8 +104,6 @@ button:hover::after, .btn:hover::after {
   z-index: 0;
 }
 
-/* 删除 .page-with-bg::before，不再需要 */
-
 .page-with-bg::after {
   content: '';
   position: absolute;
@@ -113,39 +111,61 @@ button:hover::after, .btn:hover::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 122, 73, 0.25); /* 降低华农绿覆盖层不透明度，使其更浅 */
+  /* 使用黄绿色渐变叠加，保持图片清晰可见 */
+  /* background: linear-gradient(135deg, 
+              rgba(245, 253, 231, 0.65), 
+              rgba(0, 122, 73, 0.6)); */
   z-index: -1;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(5px);
 }
 
 /* 卡片效果优化 */
 .content-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   padding: 25px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 
+              inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .content-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* 字体样式优化 */
 .text-light {
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
 }
 
 .text-accent {
-  color: #B8E986; /* 浅黄绿色，在深色背景上突出 */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #f5fde7; /* 更亮的浅黄绿色，提高对比度 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
 }
 
 .text-secondary {
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 添加额外的内容容器样式 */
+.panel-container {
+  background: linear-gradient(135deg,
+              rgba(255, 255, 255, 0.15) 0%,
+              rgba(255, 255, 255, 0.25) 100%);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 25px;
 }

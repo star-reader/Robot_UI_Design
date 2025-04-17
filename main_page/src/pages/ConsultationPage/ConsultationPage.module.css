@@ -30,20 +30,20 @@
 .chatContainer {
   max-width: 900px;
   margin: 0 auto;
-  /* 改进背景效果，使用渐变色增加层次感 */
+  /* 更新背景效果，保持良好可读性 */
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.18) 50%,
-    rgba(255, 255, 255, 0.08) 100%
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.2) 100%
   );
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 
-              inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 
+              inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
   height: calc(80vh - 120px); /* 适应视窗高度，减去头部空间 */
   display: flex;
@@ -156,7 +156,7 @@
 
 .messageContainer {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   align-items: flex-end;
 }
 
@@ -185,13 +185,15 @@
 
 .userMessage span {
   background: linear-gradient(135deg,
-               rgba(0, 122, 73, 0.4) 0%,
-               rgba(0, 168, 150, 0.3) 100%);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  color: rgba(255, 255, 255, 0.95);
+               rgba(0, 122, 73, 0.6) 0%,
+               rgba(0, 168, 150, 0.5) 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.98);
   font-weight: 500;
+  padding: 15px 20px;
+  line-height: 1.6;
 }
 
 .aiMessage {
@@ -202,13 +204,13 @@
 }
 
 .aiMessage span {
-  background: linear-gradient(135deg,
-               rgba(255, 255, 255, 0.18) 0%,
-               rgba(255, 255, 255, 0.12) 100%);
+  background: rgba(255, 255, 255, 0.4);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #333;
+  font-weight: 400;
+  padding: 15px 20px;
+  line-height: 1.6;
 }
 
 .speakerIcon {
@@ -273,6 +275,10 @@
   gap: 10px;
   margin-top: auto; /* 保持在底部 */
   position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* 右下角装饰 */
@@ -291,10 +297,11 @@
 
 .inputField {
   flex: 1;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
-  color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  font-weight: 400;
   border-radius: 30px;
   padding: 15px 20px;
   font-size: 1rem;
@@ -302,7 +309,7 @@
 }
 
 .inputField::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .inputField:focus {
@@ -365,7 +372,8 @@
   border: none;
   color: white;
   font-size: 1rem;
-  background: rgba(0, 122, 73, 0.6); /* 更浅的绿色背景 */
+  background: rgba(0, 122, 73, 0.8); /* 更浅的绿色背景 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .sendIcon {
@@ -375,7 +383,7 @@
 
 .sendBtn:hover {
   transform: scale(1.05);
-  background: rgba(0, 122, 73, 0.8); /* 悬停时稍微深一点 */
+  background: rgba(0, 122, 73, 1); /* 悬停时稍微深一点 */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 

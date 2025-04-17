@@ -60,30 +60,30 @@ const HomePage = () => {
             <span>华南农业大学</span>
             <span className={styles.gradientText}>智能招生系统</span>
           </h1>
-          <p className={styles.subTitle}>科技引领未来，智慧点亮人生</p>
+          <p className={styles.subTitle}>修德、博学、求实、创新</p>
           
           <div className={styles.heroBtns}>
             <Link to="/consultation" className={styles.primaryBtn}>
-              <span>开始咨询</span>
+              <span>智能对话系统</span>
               <i className={styles.arrowIcon}>→</i>
             </Link>
-            <a href="#features" className={styles.secondaryBtn}>了解更多</a>
+            <a href="#features" className={styles.secondaryBtn}>了解华农</a>
           </div>
           
           <div className={styles.heroStats}>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>109</span>
-              <span className={styles.statLabel}>年办学历史</span>
+              <span className={styles.statNumber}>8211亩</span>
+              <span className={styles.statLabel}>校园面积</span>
             </div>
             <div className={styles.divider}></div>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>90+</span>
+              <span className={styles.statNumber}>41</span>
+              <span className={styles.statLabel}>QS世界排名</span>
+            </div>
+            <div className={styles.divider}></div>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>98</span>
               <span className={styles.statLabel}>本科专业</span>
-            </div>
-            <div className={styles.divider}></div>
-            <div className={styles.statItem}>
-              <span className={styles.statNumber}>40000+</span>
-              <span className={styles.statLabel}>在校学生</span>
             </div>
           </div>
         </div>
