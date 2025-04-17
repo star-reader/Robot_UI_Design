@@ -112,7 +112,7 @@ const ConsultationPage = () => {
     <div className={styles.consultationPage}>
       <div className={styles.pageHeader}>
         <h1>智能招生咨询</h1>
-        <p>24小时在线，解答您关于华南农业大学的所有疑问</p>
+        <p>解答您关于华南农业大学的所有疑问</p>
       </div>
       
       <div className={styles.chatContainer}>
@@ -184,7 +184,7 @@ const ConsultationPage = () => {
             disabled={inputText.trim() === '' || isProcessing}
             className={styles.sendBtn}
           >
-            发送
+            <span className={styles.sendIcon}>➤</span>
           </button>
         </form>
       </div>

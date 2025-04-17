@@ -164,7 +164,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(25px);
 }
 
 .programCard:hover {

@@ -48,7 +48,7 @@ function App() {
           {/* <Route path="/virtual-class" element={<VirtualClassPage />} /> */}
         </Routes>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

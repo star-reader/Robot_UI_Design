@@ -91,25 +91,20 @@ button:hover::after, .btn:hover::after {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* 添加通用的页面背景样式 */
+/* 添加通用的页面背景样式 - 直接在元素上设置背景 */
 .page-with-bg {
   position: relative;
   color: #fff;
-}
-
-.page-with-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('/src/assets/images/museum.jpg') no-repeat center center;
+  min-height: 100vh;
+  background-image: url('../assets/images/museum.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  opacity: 0.4;
-  z-index: -2;
+  z-index: 0;
 }
+
+/* 删除 .page-with-bg::before，不再需要 */
 
 .page-with-bg::after {
   content: '';
@@ -118,8 +113,9 @@ button:hover::after, .btn:hover::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 122, 73, 0.7); /* 华农绿覆盖层 */
+  background: rgba(0, 122, 73, 0.25); /* 降低华农绿覆盖层不透明度，使其更浅 */
   z-index: -1;
+  backdrop-filter: blur(15px);
 }
 
 /* 卡片效果优化 */
