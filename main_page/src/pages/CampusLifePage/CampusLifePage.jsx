@@ -28,7 +28,7 @@ const CampusLifePage = () => {
       date: '9月1日',
       image: 'https://via.placeholder.com/400x250',
       description: '每年9月，华南农业大学都会举行盛大的开学典礼，欢迎来自全国各地的新生加入华农大家庭。典礼上，校领导会发表重要讲话，优秀学长学姐代表也会分享自己的经验。',
-      location: '大学城校区体育馆'
+      location: '东区体育馆'
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ const CampusLifePage = () => {
       date: '10月15-25日',
       image: 'https://via.placeholder.com/400x250',
       description: '校园文化节是华农最具特色的活动之一，为期10天的活动包括文艺演出、创意市集、美食节、体育比赛等多种形式，充分展示华农学子的青春活力和创造力。',
-      location: '校园各处'
+      location: '教三大草坪'
     },
     {
       id: 3,

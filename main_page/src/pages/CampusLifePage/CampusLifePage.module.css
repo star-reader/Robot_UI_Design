@@ -12,22 +12,18 @@
   margin-bottom: 40px;
 }
 
+/* 调整页面标题样式 */
 .pageHeader h1 {
   font-size: 2.5rem;
   margin-bottom: 15px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: inline-block;
-  color: #fff;
+  color: #007A49; /* 华农绿色 */
   font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: none; /* 删除文字阴影 */
 }
 
 .pageHeader p {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: #444; /* 深灰色 */
 }
 
 .loadingContainer {
@@ -54,20 +50,19 @@
   }
 }
 
+/* 类别导航优化 */
 .categoriesNav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  margin-bottom: 50px;
-  max-width: 1200px;
   margin: 0 auto 50px;
 }
 
 .categoryButton {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
+  background: white;
+  border: 1px solid #e0e0e0;
+  color: #444;
   padding: 12px 25px;
   border-radius: 30px;
   cursor: pointer;
@@ -76,9 +71,9 @@
 }
 
 .activeCategory {
-  background: rgba(184, 233, 134, 0.3); /* 浅黄绿色半透明 */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(90deg, #007A49, #00A896);
+  color: white;
+  border: none;
 }
 
 .categoryButton:hover:not(.activeCategory) {
@@ -98,20 +93,20 @@
   gap: 30px;
 }
 
+/* 活动卡片样式优化 */
 .eventCard {
-  background: rgba(255, 255, 255, 0.1);
+  background: white;
+  border: 1px solid #e0e0e0;
   border-radius: 15px;
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .eventCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 122, 73, 0.2);
 }
 
 .expanded {
@@ -163,14 +158,15 @@
 .eventContent h3 {
   font-size: 1.3rem;
   margin: 0 0 10px;
-  color: #B8E986; /* 浅黄绿色 */
+  color: #007A49;
+  font-weight: 600;
 }
 
 .eventLocation {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #a7a7a7;
+  color: #777;
   margin-bottom: 15px;
   font-size: 0.9rem;
 }
@@ -180,7 +176,7 @@
 }
 
 .eventDescription {
-  color: #eaeaea;
+  color: #444;
   margin-bottom: 15px;
   line-height: 1.5;
 }
@@ -204,21 +200,22 @@
   gap: 30px;
 }
 
+/* 社团卡片样式 */
 .clubCard {
   display: flex;
-  background: rgba(255, 255, 255, 0.1);
+  background: white;
   border-radius: 15px;
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #e0e0e0;
   height: 100%;
-  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .clubCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 122, 73, 0.2);
 }
 
 .clubImage {
@@ -254,11 +251,11 @@
 .clubContent h3 {
   font-size: 1.3rem;
   margin: 0 0 10px;
-  color: #B8E986; /* 浅黄绿色 */
+  color: #007A49;
 }
 
 .clubDescription {
-  color: #eaeaea;
+  color: #444;
   margin-bottom: 15px;
   line-height: 1.5;
   flex-grow: 1;
@@ -282,16 +279,17 @@
 .joinButton {
   align-self: flex-start;
   background: transparent;
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+  border: 1px solid #007A49;
+  color: #007A49;
   padding: 8px 20px;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .joinButton:hover {
-  background: var(--primary-color);
+  background: #007A49;
   color: #fff;
 }
 
@@ -302,19 +300,19 @@
   gap: 30px;
 }
 
+/* 设施卡片样式 */
 .facilityCard {
-  background: rgba(255, 255, 255, 0.1);
+  background: white;
+  border: 1px solid #e0e0e0;
   border-radius: 15px;
   overflow: hidden;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .facilityCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 122, 73, 0.2);
 }
 
 .facilityImage {
@@ -340,11 +338,11 @@
 .facilityContent h3 {
   font-size: 1.3rem;
   margin: 0 0 10px;
-  color: #B8E986; /* 浅黄绿色 */
+  color: #007A49;
 }
 
 .facilityDescription {
-  color: #eaeaea;
+  color: #444;
   margin-bottom: 15px;
   line-height: 1.5;
 }
