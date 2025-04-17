@@ -1,0 +1,65 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  background-color: #001529;
+}
+
+.mainContent {
+  flex: 1;
+}
+
+.loadingContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #001529;
+}
+
+.loadingLogo {
+  width: 150px;
+  height: auto;
+  animation: pulse 2s infinite;
+}
+
+.loadingBar {
+  width: 300px;
+  height: 4px;
+  background-color: #0a2540;
+  border-radius: 2px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.loadingProgress {
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(90deg, #4CAF50, #2196F3);
+  border-radius: 2px;
+  animation: progress 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}

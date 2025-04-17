@@ -1,0 +1,119 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 15px 0;
+  transition: all 0.3s ease;
+  background: rgba(0, 21, 41, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.scrolled {
+  padding: 10px 0;
+  background: rgba(0, 21, 41, 0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.headerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.logoText h1 {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+.logoText p {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.navigation {
+  display: flex;
+  gap: 25px;
+}
+
+.navItem {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.navItem::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+}
+
+.navItem:hover::after,
+.active::after {
+  width: 100%;
+}
+
+.active {
+  color: var(--primary-color);
+}
+
+.contactBtn {
+  position: relative;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.btnGlow {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  top: 0;
+  filter: blur(5px);
+  transform: skewX(-20deg) translateX(-150px);
+  animation: glow 3s infinite;
+}
+
+@keyframes glow {
+  0% {
+    transform: skewX(-20deg) translateX(-150px);
+  }
+  50% {
+    transform: skewX(-20deg) translateX(250px);
+  }
+  100% {
+    transform: skewX(-20deg) translateX(-150px);
+  }
+}

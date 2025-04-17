@@ -1,0 +1,445 @@
+.admissionsPage {
+  background: var(--dark-bg);
+  color: #fff;
+  min-height: 100vh;
+  padding: 120px 20px 60px;
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pageHeader h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.pageHeader p {
+  font-size: 1.1rem;
+  color: #a7a7a7;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tabsContainer {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tabButton {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.activeTab {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tabButton:hover:not(.activeTab) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.searchContainer {
+  position: relative;
+  max-width: 300px;
+  width: 100%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  outline: none;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a7a7a7;
+}
+
+.programsSection, 
+.applicationProcess, 
+.faqSection, 
+.contactSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.programsSection h2, 
+.applicationProcess h2, 
+.faqSection h2, 
+.contactSection h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.programsSection h2::after, 
+.applicationProcess h2::after, 
+.faqSection h2::after,
+.contactSection h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.programsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.programCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.programCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.programHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.programCard h3 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.programBadge {
+  background: rgba(76, 175, 80, 0.2);
+  color: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.programDesc {
+  color: #a7a7a7;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.programDetails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.detailItem {
+  width: 48%;
+  margin-bottom: 10px;
+}
+
+.detailLabel {
+  display: block;
+  font-size: 0.85rem;
+  color: #a7a7a7;
+  margin-bottom: 5px;
+}
+
+.moreInfoBtn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.moreInfoBtn:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.noResults {
+  text-align: center;
+  padding: 50px 0;
+  color: #a7a7a7;
+  font-size: 1.1rem;
+}
+
+.processSteps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 50px 0;
+  flex-wrap: wrap;
+}
+
+.step {
+  width: 18%;
+  text-align: center;
+  position: relative;
+}
+
+.stepIcon {
+  font-size: 2rem;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.step:hover .stepIcon {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.step h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 0.9rem;
+  color: #a7a7a7;
+}
+
+.stepNumber {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--primary-color);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.connector {
+  position: absolute;
+  top: 40px;
+  left: calc(100% + 10px);
+  width: calc(100% - 120px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  z-index: 1;
+}
+
+.faqList {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faqItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.expanded {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.faqQuestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faqQuestion h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.faqIcon {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.faqAnswer {
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faqAnswer p {
+  color: #a7a7a7;
+  line-height: 1.6;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.contactCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contactCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contactIcon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.contactCard h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.contactCard p {
+  color: #a7a7a7;
+  margin: 5px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .processSteps {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .step {
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .connector {
+    left: 50%;
+    top: calc(100% + 10px);
+    width: 2px;
+    height: 30px;
+    transform: translateX(-50%);
+  }
+  
+  .tabsContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .tabs {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .searchContainer {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .programsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}

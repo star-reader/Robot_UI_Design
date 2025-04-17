@@ -1,0 +1,563 @@
+.campusLifePage {
+  min-height: 100vh;
+  padding: 120px 20px 60px;
+  background: var(--dark-bg);
+  color: #fff;
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pageHeader h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.pageHeader p {
+  font-size: 1.1rem;
+  color: #a7a7a7;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.categoriesNav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.categoryButton {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.activeCategory {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.categoryButton:hover:not(.activeCategory) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.contentContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 500px;
+}
+
+/* Events/Activities Styles */
+.eventsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 30px;
+}
+
+.eventCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.eventCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.expanded {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+}
+
+.expanded .eventImage {
+  width: 50%;
+}
+
+.expanded .eventContent {
+  width: 50%;
+}
+
+.eventImage {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.eventImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.eventCard:hover .eventImage img {
+  transform: scale(1.05);
+}
+
+.eventDate {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 15px;
+  border-top-left-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.eventContent {
+  padding: 20px;
+}
+
+.eventContent h3 {
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+}
+
+.eventLocation {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #a7a7a7;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.locationIcon {
+  color: var(--primary-color);
+}
+
+.eventDescription {
+  color: #eaeaea;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.readMore {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.readMore:hover {
+  color: var(--secondary-color);
+}
+
+/* Clubs Styles */
+.clubsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 30px;
+}
+
+.clubCard {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+}
+
+.clubCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.clubImage {
+  width: 200px;
+  position: relative;
+}
+
+.clubImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.membersBadge {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 5px 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.clubContent {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.clubContent h3 {
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+}
+
+.clubDescription {
+  color: #eaeaea;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.clubAchievements {
+  margin-bottom: 20px;
+}
+
+.clubAchievements h4 {
+  font-size: 1rem;
+  margin: 0 0 10px;
+  color: var(--primary-color);
+}
+
+.clubAchievements p {
+  color: #a7a7a7;
+  font-size: 0.9rem;
+}
+
+.joinButton {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.joinButton:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Facilities Styles */
+.facilitiesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 30px;
+}
+
+.facilityCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.facilityCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.facilityImage {
+  height: 250px;
+  overflow: hidden;
+}
+
+.facilityImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.facilityCard:hover .facilityImage img {
+  transform: scale(1.05);
+}
+
+.facilityContent {
+  padding: 20px;
+}
+
+.facilityContent h3 {
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+}
+
+.facilityDescription {
+  color: #eaeaea;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.facilityHours {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a7a7a7;
+  font-size: 0.9rem;
+}
+
+.clockIcon {
+  color: var(--primary-color);
+}
+
+/* Dormitories Styles */
+.dormitoriesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 30px;
+}
+
+.dormCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dormCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dormImage {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dormImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.dormCard:hover .dormImage img {
+  transform: scale(1.05);
+}
+
+.dormType {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 15px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.dormContent {
+  padding: 20px;
+}
+
+.dormContent h3 {
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+}
+
+.dormDescription {
+  color: #eaeaea;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.amenitiesList {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.amenitiesList h4 {
+  font-size: 1rem;
+  margin: 0 0 10px;
+  color: var(--primary-color);
+}
+
+.amenitiesList p {
+  color: #a7a7a7;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Testimonials Styles */
+.testimonialsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.testimonialCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.testimonialHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.testimonialAvatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--primary-color);
+}
+
+.testimonialAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonialInfo h3 {
+  font-size: 1.2rem;
+  margin: 0 0 5px;
+}
+
+.testimonialInfo p {
+  color: #a7a7a7;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.testimonialQuote {
+  position: relative;
+  padding: 10px 30px;
+}
+
+.quoteIcon, .quoteIconEnd {
+  font-size: 2.5rem;
+  position: absolute;
+  opacity: 0.3;
+  color: var(--primary-color);
+}
+
+.quoteIcon {
+  top: -10px;
+  left: 0;
+}
+
+.quoteIconEnd {
+  bottom: -30px;
+  right: 0;
+}
+
+.testimonialQuote p {
+  color: #eaeaea;
+  font-style: italic;
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .eventsContainer, .clubsContainer, .facilitiesContainer, .dormitoriesContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .expanded {
+    flex-direction: column;
+  }
+  
+  .expanded .eventImage, .expanded .eventContent {
+    width: 100%;
+  }
+  
+  .clubImage {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonialCard {
+    grid-column: span 1;
+  }
+  
+  .testimonialsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .campusLifePage {
+    padding: 100px 10px 40px;
+  }
+  
+  .pageHeader h1 {
+    font-size: 2rem;
+  }
+  
+  .clubCard {
+    flex-direction: column;
+  }
+  
+  .clubImage {
+    width: 100%;
+    height: 200px;
+  }
+}
