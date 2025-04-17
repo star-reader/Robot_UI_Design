@@ -6,13 +6,14 @@
   z-index: 1000;
   padding: 15px 0;
   transition: all 0.3s ease;
-  background: rgba(0, 21, 41, 0.8);
+  background: rgba(25, 42, 86, 0.8);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(116, 185, 255, 0.1);
 }
 
 .scrolled {
   padding: 10px 0;
-  background: rgba(0, 21, 41, 0.95);
+  background: rgba(25, 42, 86, 0.95);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -70,7 +71,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
   transition: width 0.3s ease;
 }
 
@@ -80,13 +81,13 @@
 }
 
 .active {
-  color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 .contactBtn {
   position: relative;
   padding: 10px 20px;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
   color: white;
   border: none;
   border-radius: 5px;
@@ -115,5 +116,134 @@
   }
   100% {
     transform: skewX(-20deg) translateX(-150px);
+  }
+}
+
+/* 在现有样式下添加下拉菜单相关样式 */
+.featuresDropdown {
+  position: relative;
+}
+
+.dropdownBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  padding: 5px 0;
+}
+
+.arrow {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.active .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdownContent {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  background: rgba(25, 42, 86, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+  z-index: 1000;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+  border: 1px solid rgba(116, 185, 255, 0.2);
+}
+
+.dropdownContent::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 21, 41, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+.dropdownItem:hover {
+  background: rgba(52, 152, 219, 0.2);
+  transform: translateX(5px);
+}
+
+.itemIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* 确保导航项目在移动设备上也能正常显示 */
+@media (max-width: 1024px) {
+  .navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 21, 41, 0.95);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mobileMenuOpen .navigation {
+    display: flex;
+  }
+  
+  .navItem {
+    margin: 10px 0;
+  }
+  
+  .dropdownContent {
+    position: relative;
+    transform: none;
+    left: 0;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: none;
   }
 }

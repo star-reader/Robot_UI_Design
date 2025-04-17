@@ -1,0 +1,725 @@
+.dataVisPage {
+  min-height: 100vh;
+  padding: 120px 20px 60px;
+  background: var(--dark-bg);
+  color: #fff;
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pageHeader h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.pageHeader p {
+  font-size: 1.1rem;
+  color: #a7a7a7;
+}
+
+.loadingContainer {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-left-color: var(--primary-color);
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tabsContainer {
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.tabButton {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.activeTab {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tabButton:hover:not(.activeTab) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dataContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 数据卡片 */
+.dataCardsSection {
+  margin-bottom: 50px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.dataCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dataCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dataCardIcon {
+  font-size: 2.5rem;
+  margin-right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dataCardContent {
+  flex: 1;
+}
+
+.dataCardContent h3 {
+  font-size: 1rem;
+  margin: 0 0 10px;
+  color: #a7a7a7;
+}
+
+.dataValue {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.valueNumber {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.valueUnit {
+  font-size: 1rem;
+  margin-left: 5px;
+  color: #a7a7a7;
+}
+
+.dataDescription {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* 图表区域 */
+.chartsSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.chartCard {
+  background: rgba(0, 21, 41, 0.5);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chartCard h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.chartContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+/* 统计亮点部分 */
+.statsSection {
+  margin-bottom: 50px;
+}
+
+.statsSection h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 10px;
+}
+
+.statsSection h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.statsList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.statItem {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  width: 200px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.statItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.statNumber span {
+  font-size: 1.2rem;
+  margin-left: 2px;
+}
+
+.statLabel {
+  color: #a7a7a7;
+}
+
+/* 分数线分析部分 */
+.scoresSection {
+  margin-bottom: 50px;
+}
+
+.scoresTrends {
+  background: rgba(0, 21, 41, 0.5);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scoresTrends h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.scoresTable {
+  background: rgba(0, 21, 41, 0.5);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scoresTable h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dataTable th, .dataTable td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dataTable th {
+  color: #a7a7a7;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.dataTable tr:last-child td {
+  border-bottom: none;
+}
+
+.positive {
+  color: var(--primary-color);
+}
+
+.negative {
+  color: #f44336;
+}
+
+/* 热门专业部分 */
+.hotMajors {
+  margin-top: 40px;
+}
+
+.hotMajors h3 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.majorsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.majorItem {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.majorItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.majorName {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.majorScore {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.majorScore span {
+  font-size: 1rem;
+  margin-left: 2px;
+}
+
+.oversubscription {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.majorLabel {
+  color: #a7a7a7;
+  font-size: 0.9rem;
+}
+
+/* 就业数据部分 */
+.employmentSection {
+  animation: fadeIn 0.5s ease;
+}
+
+.employmentOverview h2 {
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.employmentRate {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: rgba(0, 21, 41, 0.5);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rateCircle {
+  width: 150px;
+  height: 150px;
+  background: conic-gradient(var(--primary-color) 96.8%, rgba(255, 255, 255, 0.1) 0%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rateInner {
+  width: 120px;
+  height: 120px;
+  background: var(--dark-bg);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rateNumber {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.rateLabel {
+  font-size: 0.9rem;
+  color: #a7a7a7;
+  margin-top: 5px;
+}
+
+.rateDetails {
+  flex: 1;
+}
+
+.rateDetails p {
+  margin: 0 0 15px;
+  line-height: 1.5;
+}
+
+.rateChange {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rateUp {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.rateInfo {
+  color: #a7a7a7;
+  font-size: 0.9rem;
+}
+
+.employmentDistribution, .employersList {
+  margin-bottom: 30px;
+}
+
+.employmentDistribution h3, .employersList h3 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.distributionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.distributionItem {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.distributionItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.distributionIcon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.distributionPercentage {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.distributionLabel {
+  color: #a7a7a7;
+  font-size: 0.9rem;
+}
+
+.employersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.employerItem {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.employerItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 生源分布部分 */
+.demographicsSection {
+  animation: fadeIn 0.5s ease;
+}
+
+.provincesDistribution, .educationBackground, .diversity {
+  margin-bottom: 40px;
+}
+
+.provincesDistribution h3, .educationBackground h3, .diversity h3 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.provincesTable {
+  background: rgba(0, 21, 41, 0.5);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.backgroundCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.backgroundCard {
+  background: rgba(0, 21, 41, 0.5);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.backgroundCard h4 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.backgroundRatio {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ratioItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ratioBar {
+  height: 8px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+}
+
+.ratioLabel {
+  font-size: 0.9rem;
+  color: #a7a7a7;
+}
+
+.diversityCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.diversityCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.diversityCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.diversityIcon {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diversityContent {
+  flex: 1;
+}
+
+.diversityContent h4 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.diversityNumber {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.diversityContent p {
+  margin: 0;
+  color: #a7a7a7;
+  font-size: 0.9rem;
+}
+
+.dataDisclaimer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #a7a7a7;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式样式 */
+@media (max-width: 992px) {
+  .chartsSection {
+    grid-template-columns: 1fr;
+  }
+  
+  .employmentRate {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .statsSection h2 {
+    font-size: 1.5rem;
+  }
+  
+  .statItem {
+    width: 100%;
+  }
+  
+  .employmentRate {
+    padding: 20px;
+  }
+  
+  .rateCircle {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .rateInner {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dataVisPage {
+    padding: 100px 10px 40px;
+  }
+  
+  .pageHeader h1 {
+    font-size: 2rem;
+  }
+  
+  .tabButton {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}

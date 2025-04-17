@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(to right, #001529, #002140);
+  background: linear-gradient(to right, #192a56, #273c75);
   padding: 60px 30px 30px;
   color: #fff;
   position: relative;
@@ -35,7 +35,7 @@
 
 .logoText p {
   font-size: 0.9rem;
-  color: #4CAF50;
+  color: var(--accent-color);
   margin: 5px 0 0;
 }
 
@@ -64,7 +64,7 @@
   left: 0;
   width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, #4CAF50, #2196F3);
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
 }
 
 .linkColumn ul {
@@ -160,7 +160,7 @@
 }
 
 .socialIcon:hover {
-  background: linear-gradient(45deg, #4CAF50, #2196F3);
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -217,6 +217,7 @@
   top: 20%;
   left: 0;
   width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.1), transparent);
   animation: moveLine 15s linear infinite;
 }
 
@@ -224,6 +225,7 @@
   top: 40%;
   left: 0;
   width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 210, 255, 0.1), transparent);
   animation: moveLine 20s linear infinite reverse;
 }
 
@@ -231,6 +233,7 @@
   top: 60%;
   left: 0;
   width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(116, 185, 255, 0.1), transparent);
   animation: moveLine 25s linear infinite;
 }
 

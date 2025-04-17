@@ -6,22 +6,40 @@
 }
 
 :root {
-  --primary-color: #4CAF50;  /* SCAU green */
-  --secondary-color: #2196F3;
-  --dark-bg: #001529;
-  --light-bg: #f0f2f5;
+  /* 更新为科技感蓝色配色方案 */
+  --primary-color: #3498db;  /* 主色调：浅蓝色 */
+  --secondary-color: #2980b9; /* 辅助色：深蓝色 */
+  --accent-color: #00d2ff; /* 强调色：亮青色 */
+  --highlight-color: #74b9ff; /* 高亮色：天蓝色 */
+  
+  /* 背景色调整为科技感渐变 */
+  --dark-bg: linear-gradient(135deg, #192a56, #273c75);
+  --dark-bg-solid: #192a56; /* 需要纯色背景时使用 */
+  --light-bg: #f5f6fa;
+  
+  /* 文本颜色 */
   --text-light: #ffffff;
-  --text-dark: #212121;
-  --accent-color: #FF9800;
+  --text-dark: #2c3e50;
+  --text-muted: #a4b0be;
+  
+  /* 面板和卡片背景 */
+  --panel-bg: rgba(25, 42, 86, 0.7);
+  --card-bg: rgba(39, 60, 117, 0.5);
+  
+  /* 交互元素颜色 */
+  --success-color: #2ecc71;
+  --warning-color: #f39c12;
+  --error-color: #e74c3c;
 }
 
 body {
   margin: 0;
-  background-color: var(--dark-bg);
+  background: var(--dark-bg);
+  color: var(--text-light);
 }
 
 button, .btn {
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   color: white;
   border: none;
   border-radius: 4px;
@@ -34,7 +52,8 @@ button, .btn {
 }
 
 button:hover, .btn:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+  transform: translateY(-2px);
 }
 
 button::after, .btn::after {
@@ -54,7 +73,7 @@ button:hover::after, .btn:hover::after {
 }
 
 .tech-card {
-  background: rgba(0, 21, 41, 0.7);
+  background: var(--panel-bg);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -76,4 +95,29 @@ button:hover::after, .btn:hover::after {
 
 .fadeIn {
   animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 科技感视觉元素 */
+.glow-effect {
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+}
+
+.tech-border {
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  border-radius: 10px;
+}
+
+.tech-gradient-text {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
 }

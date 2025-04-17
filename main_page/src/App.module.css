@@ -2,8 +2,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #fff;
-  background-color: #001529;
+  color: var(--text-light);
+  background: var(--dark-bg);
 }
 
 .mainContent {
@@ -17,19 +17,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #001529;
+  background: var(--dark-bg);
 }
 
 .loadingLogo {
   width: 150px;
   height: auto;
   animation: pulse 2s infinite;
+  filter: drop-shadow(0 0 15px rgba(52, 152, 219, 0.5));
 }
 
 .loadingBar {
   width: 300px;
   height: 4px;
-  background-color: #0a2540;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 2px;
   margin-top: 20px;
   overflow: hidden;
@@ -38,7 +39,7 @@
 .loadingProgress {
   height: 100%;
   width: 30%;
-  background: linear-gradient(90deg, #4CAF50, #2196F3);
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   border-radius: 2px;
   animation: progress 1.5s infinite ease-in-out;
 }
@@ -46,12 +47,15 @@
 @keyframes pulse {
   0% {
     transform: scale(1);
+    opacity: 0.8;
   }
   50% {
     transform: scale(1.05);
+    opacity: 1;
   }
   100% {
     transform: scale(1);
+    opacity: 0.8;
   }
 }
 

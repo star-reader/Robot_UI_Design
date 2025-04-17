@@ -7,6 +7,10 @@ import ConsultationPage from './pages/ConsultationPage/ConsultationPage'
 import VirtualTourPage from './pages/VirtualTourPage/VirtualTourPage'
 import AdmissionsPage from './pages/AdmissionsPage/AdmissionsPage'
 import CampusLifePage from './pages/CampusLifePage/CampusLifePage'
+import MajorMatchPage from './pages/MajorMatchPage/MajorMatchPage'
+// import ARCampusPage from './pages/ARCampusPage/ARCampusPage'
+import DataVisPage from './pages/DataVisPage/DataVisPage'
+// import VirtualClassPage from './pages/VirtualClassPage/VirtualClassPage'
 import styles from './App.module.css'
 
 function App() {
@@ -38,6 +42,10 @@ function App() {
           <Route path="/virtual-tour" element={<VirtualTourPage />} />
           <Route path="/admissions" element={<AdmissionsPage />} />
           <Route path="/campus-life" element={<CampusLifePage />} />
+          <Route path="/major-match" element={<MajorMatchPage />} />
+          {/* <Route path="/ar-campus" element={<ARCampusPage />} /> */}
+          <Route path="/data-visualization" element={<DataVisPage />} />
+          {/* <Route path="/virtual-class" element={<VirtualClassPage />} /> */}
         </Routes>
       </main>
       <Footer />
