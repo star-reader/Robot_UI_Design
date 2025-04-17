@@ -35,7 +35,7 @@
 
 .tourSidebar {
   flex: 0 0 300px;
-  background: rgba(0, 21, 41, 0.5);
+  background: rgba(0, 122, 73, 0.5); /* 更改为华农绿半透明 */
   border-radius: 15px;
   padding: 20px;
   backdrop-filter: blur(10px);
@@ -111,7 +111,7 @@
 
 .locationDesc {
   font-size: 0.9rem;
-  color: #a7a7a7;
+  /* // color: #a7a7a7; */
 }
 
 .active .locationDesc {
@@ -120,7 +120,7 @@
 
 .tourGuide {
   margin-top: auto;
-  background: rgba(0, 21, 41, 0.7);
+  background: rgba(0, 122, 73, 0.7); /* 更改为华农绿半透明 */
   border-radius: 10px;
   padding: 15px;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -175,7 +175,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 21, 41, 0.8);
+  background: rgba(0, 122, 73, 0.8); /* 更改为华农绿半透明 */
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -18,6 +18,13 @@ const VirtualTourPage = () => {
     return 'https://www.720yun.com/t/3bb26xauyn6?scene_id=1243117'
   }
 
+  const handleLoadingComplete = () => {
+    setIsLoading(false)
+    setTimeout(() => {
+        document.querySelector('.Ads_ads_2vcYaB').style.display = 'none'
+    }, 500);
+  }
+
   return (
     <div className={styles.virtualTourPage}>
       <div className={styles.pageHeader}>
@@ -65,7 +72,7 @@ const VirtualTourPage = () => {
             frameBorder="0" 
             allowFullScreen
             className={styles.iframe}
-            onLoad={() => setIsLoading(false)}
+            onLoad={() => handleLoadingComplete()}
           ></iframe>
         </div>
       </div>

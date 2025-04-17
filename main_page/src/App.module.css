@@ -2,8 +2,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: var(--text-light);
-  background: var(--dark-bg);
+  color: #333333;
+  background-color: #f5f5f5; /* 浅灰色背景 */
 }
 
 .mainContent {
@@ -17,20 +17,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--dark-bg);
+  background: linear-gradient(135deg, rgba(245, 253, 231, 0.7), rgba(220, 243, 230, 0.7)); /* 浅黄绿到浅绿 */
 }
 
 .loadingLogo {
   width: 150px;
   height: auto;
   animation: pulse 2s infinite;
-  filter: drop-shadow(0 0 15px rgba(52, 152, 219, 0.5));
 }
 
 .loadingBar {
   width: 300px;
   height: 4px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #0a2540;
   border-radius: 2px;
   margin-top: 20px;
   overflow: hidden;
@@ -39,7 +38,7 @@
 .loadingProgress {
   height: 100%;
   width: 30%;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(90deg, #007A49, #00A896); /* 华农绿到蓝绿色渐变 */
   border-radius: 2px;
   animation: progress 1.5s infinite ease-in-out;
 }
@@ -47,15 +46,12 @@
 @keyframes pulse {
   0% {
     transform: scale(1);
-    opacity: 0.8;
   }
   50% {
     transform: scale(1.05);
-    opacity: 1;
   }
   100% {
     transform: scale(1);
-    opacity: 0.8;
   }
 }
 

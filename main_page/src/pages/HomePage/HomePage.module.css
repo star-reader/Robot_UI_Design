@@ -26,7 +26,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(25, 42, 86, 0.7), rgba(39, 60, 117, 0.9));
+  background: linear-gradient(rgba(0, 21, 41, 0.7), rgba(0, 21, 41, 0.9));
 }
 
 .heroContent {
@@ -47,7 +47,7 @@
 }
 
 .gradientText {
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -70,7 +70,7 @@
 }
 
 .primaryBtn {
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   color: white;
   padding: 15px 30px;
   border-radius: 30px;
@@ -88,7 +88,7 @@
 
 .primaryBtn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .arrowIcon {
@@ -203,7 +203,7 @@
 /* Features Section */
 .features {
   padding: 100px 0;
-  background: var(--dark-bg);
+  background: linear-gradient(135deg, rgba(245, 253, 231, 0.7), rgba(220, 243, 230, 0.7)); /* 浅黄绿到浅绿 */
   position: relative;
 }
 
@@ -215,7 +215,7 @@
 .sectionHeader h2 {
   font-size: 2.5rem;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: #007A49; /* 华农绿色文字 */
   position: relative;
   display: inline-block;
 }
@@ -232,7 +232,7 @@
 }
 
 .sectionHeader p {
-  color: #a7a7a7;
+  color: #333333; /* 深灰色文字，更易读 */
   font-size: 1.1rem;
 }
 
@@ -246,7 +246,7 @@
 }
 
 .featureCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.6); /* 半透明白色背景 */
   border-radius: 15px;
   padding: 30px;
   text-align: center;
@@ -258,7 +258,7 @@
   align-items: center;
   text-decoration: none;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 122, 73, 0.2);
 }
 
 .featureCard:hover {
@@ -270,29 +270,28 @@
 .featureIcon {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: var(--accent-color);
 }
 
 .featureCard h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: #007A49; /* 华农绿色标题 */
 }
 
 .featureCard p {
-  color: #a7a7a7;
+  color: #444444; /* 深灰色文字 */
   margin-bottom: 20px;
   flex-grow: 1;
 }
 
 .learnMore {
-  color: var(--primary-color);
+  color: #007A49; /* 华农绿色链接 */
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .featureCard:hover .learnMore {
-  color: var(--accent-color);
+  color: #00A896; /* 悬停时变为蓝绿色 */
 }
 
 .glowEffect {
@@ -330,7 +329,7 @@
 /* Consultation Preview Section */
 .consultationPreview {
   padding: 100px 0;
-  background: linear-gradient(135deg, #001529, #002140);
+  background: linear-gradient(135deg, rgba(230, 248, 235, 0.8), rgba(210, 240, 225, 0.8)); /* 浅绿色渐变 */
   position: relative;
   overflow: hidden;
 }
@@ -345,11 +344,11 @@
 .previewContent h2 {
   font-size: 2.5rem;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: #007A49; /* 华农绿色标题 */
 }
 
 .previewContent p {
-  color: #a7a7a7;
+  color: #444444; /* 深灰色文字 */
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 50px;
@@ -358,10 +357,10 @@
 .chatPreview {
   max-width: 800px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.6); /* 半透明白色背景 */
   border-radius: 20px;
   padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 122, 73, 0.2);
 }
 
 .chatMessage {
@@ -379,7 +378,7 @@
 }
 
 .userMessage span {
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background: rgba(0, 122, 73, 0.8); /* 华农绿用户消息背景 */
   color: white;
   padding: 15px;
   border-radius: 20px 20px 0 20px;
@@ -387,12 +386,13 @@
 }
 
 .aiMessage span {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.8); /* 白色AI消息背景 */
+  color: #333333; /* 深灰色文字 */
   padding: 15px;
   border-radius: 20px 20px 20px 0;
   text-align: left;
   max-width: 80%;
+  border: 1px solid rgba(0, 122, 73, 0.2);
 }
 
 .tryItBtn {
@@ -414,7 +414,7 @@
 /* Virtual Tour Section */
 .virtualTourSection {
   padding: 100px 0;
-  background: var(--dark-bg);
+  background: linear-gradient(135deg, rgba(242, 255, 216, 0.7), rgba(225, 248, 232, 0.7)); /* 浅黄绿到浅绿 */
 }
 
 .tourPreviewBox {

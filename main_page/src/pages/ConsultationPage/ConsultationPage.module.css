@@ -3,6 +3,8 @@
   padding: 120px 20px 60px;
   background: var(--dark-bg);
   color: #fff;
+  /* 添加通用背景类 */
+  composes: page-with-bg from global;
 }
 
 .pageHeader {
@@ -13,27 +15,27 @@
 .pageHeader h1 {
   font-size: 2.5rem;
   margin-bottom: 15px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: inline-block;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .pageHeader p {
   font-size: 1.1rem;
-  color: #a7a7a7;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .chatContainer {
   max-width: 900px;
   margin: 0 auto;
-  background: rgba(0, 21, 41, 0.5);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
 }
 
@@ -93,11 +95,23 @@
   border-top-right-radius: 4px;
 }
 
+.userMessage span {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-weight: 500;
+}
+
 .aiMessage {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 122, 73, 0.3); /* 更改为华农绿半透明 */
   color: #fff;
   border-top-left-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.aiMessage span {
+  background: rgba(184, 233, 134, 0.2); /* 浅黄绿色半透明 */
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .speakerIcon {
@@ -197,7 +211,8 @@
 }
 
 .voiceBtn {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .voiceBtn:hover {
@@ -223,7 +238,7 @@
 }
 
 .sendBtn {
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(90deg, rgba(184, 233, 134, 0.8), rgba(0, 168, 150, 0.8)); /* 浅黄绿到浅蓝绿渐变 */
 }
 
 .sendBtn:hover {
@@ -245,19 +260,19 @@
 }
 
 .suggestionChip {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   padding: 8px 15px;
   font-size: 0.9rem;
-  color: #a7a7a7;
+  color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
 }
 
 .suggestionChip:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.25);
   color: #fff;
   transform: translateY(-2px);
 }

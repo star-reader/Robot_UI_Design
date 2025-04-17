@@ -1,8 +1,10 @@
 .admissionsPage {
-  background: var(--dark-bg);
+  background: linear-gradient(135deg, #00855D, #007A49); /* 将深蓝色渐变改为华农绿色系渐变 */
   color: #fff;
   min-height: 100vh;
   padding: 120px 20px 60px;
+  /* 添加通用背景类 */
+  composes: page-with-bg from global;
 }
 
 .pageHeader {
@@ -12,17 +14,15 @@
 
 .pageHeader h1 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: inline-block;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .pageHeader p {
   font-size: 1.1rem;
-  color: #a7a7a7;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .loadingContainer {
@@ -66,8 +66,8 @@
 }
 
 .tabButton {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   padding: 12px 25px;
   border-radius: 30px;
@@ -77,8 +77,9 @@
 }
 
 .activeTab {
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: rgba(184, 233, 134, 0.3); /* 浅黄绿色半透明 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .tabButton:hover:not(.activeTab) {
@@ -155,20 +156,21 @@
 }
 
 .programCard {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 25px;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   height: 100%;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(5px);
 }
 
 .programCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .programHeader {
@@ -181,11 +183,12 @@
 .programCard h3 {
   font-size: 1.3rem;
   margin: 0;
+  color: #B8E986; /* 浅黄绿色，在深色背景上突出 */
 }
 
 .programBadge {
-  background: rgba(76, 175, 80, 0.2);
-  color: var(--primary-color);
+  background: rgba(184, 233, 134, 0.3); /* 浅黄绿色半透明 */
+  color: #fff;
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -256,10 +259,10 @@
 }
 
 .stepIcon {
-  font-size: 2rem;
+  font-size: 1.8rem;
   width: 80px;
   height: 80px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -268,10 +271,11 @@
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
+  color: #fff;
 }
 
 .step:hover .stepIcon {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: rgba(184, 233, 134, 0.3); /* 浅黄绿色半透明 */
   transform: scale(1.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -317,8 +321,8 @@
 }
 
 .faqItem {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 15px;
@@ -326,12 +330,8 @@
   transition: all 0.3s ease;
 }
 
-.faqItem:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.expanded {
-  background: rgba(255, 255, 255, 0.08);
+.faqItem:hover, .expanded {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .faqQuestion {
@@ -348,7 +348,7 @@
 
 .faqIcon {
   font-size: 1.4rem;
-  color: var(--primary-color);
+  color: #B8E986; /* 浅黄绿色 */
 }
 
 .faqAnswer {
@@ -396,6 +396,15 @@
 .contactCard p {
   color: #a7a7a7;
   margin: 5px 0;
+}
+
+.scoresTable, .scoresTrends {
+  background: rgba(0, 122, 73, 0.4); /* 更改为华农绿半透明 */
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Responsive styles */

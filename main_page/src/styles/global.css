@@ -6,36 +6,31 @@
 }
 
 :root {
-  /* 更新为科技感蓝色配色方案 */
-  --primary-color: #3498db;  /* 主色调：浅蓝色 */
-  --secondary-color: #2980b9; /* 辅助色：深蓝色 */
-  --accent-color: #00d2ff; /* 强调色：亮青色 */
-  --highlight-color: #74b9ff; /* 高亮色：天蓝色 */
+  /* 保持华农绿为主要颜色 */
+  --primary-color: #007A49;  /* 华农绿 */
+  --secondary-color: #00A896; /* 蓝绿色辅助色 */
+  --accent-color: #39B0AC; /* 浅蓝绿色强调色 */
+  --highlight-color: #F5FDE7; /* 浅黄绿色高亮 */
   
-  /* 背景色调整为科技感渐变 */
-  --dark-bg: linear-gradient(135deg, #192a56, #273c75);
-  --dark-bg-solid: #192a56; /* 需要纯色背景时使用 */
-  --light-bg: #f5f6fa;
+  /* 适用于页面内容的浅色背景 */
+  --section-bg-1: linear-gradient(135deg, rgba(245, 253, 231, 0.7), rgba(220, 243, 230, 0.7)); /* 浅黄绿到浅绿 */
+  --section-bg-2: linear-gradient(135deg, rgba(230, 248, 235, 0.8), rgba(210, 240, 225, 0.8)); /* 浅绿色渐变 */
   
-  /* 文本颜色 */
+  /* 适用于卡片的背景 */
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --card-border: rgba(0, 122, 73, 0.2);
+  
+  /* 文字颜色 */
+  --text-dark: #333333;
+  --text-medium: #444444;
   --text-light: #ffffff;
-  --text-dark: #2c3e50;
-  --text-muted: #a4b0be;
-  
-  /* 面板和卡片背景 */
-  --panel-bg: rgba(25, 42, 86, 0.7);
-  --card-bg: rgba(39, 60, 117, 0.5);
-  
-  /* 交互元素颜色 */
-  --success-color: #2ecc71;
-  --warning-color: #f39c12;
-  --error-color: #e74c3c;
+  --text-primary: #007A49; /* 主色调文字（华农绿） */
 }
 
 body {
   margin: 0;
-  background: var(--dark-bg);
-  color: var(--text-light);
+  color: var(--text-dark);
+  background-color: #f5f5f5; /* 浅灰色背景 */
 }
 
 button, .btn {
@@ -52,8 +47,7 @@ button, .btn {
 }
 
 button:hover, .btn:hover {
-  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 button::after, .btn::after {
@@ -73,19 +67,19 @@ button:hover::after, .btn:hover::after {
 }
 
 .tech-card {
-  background: var(--panel-bg);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 122, 73, 0.2);
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(0, 122, 73, 0.15);
 }
 
 @keyframes fadeIn {
@@ -97,27 +91,65 @@ button:hover::after, .btn:hover::after {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* 科技感视觉元素 */
-.glow-effect {
-  box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+/* 添加通用的页面背景样式 */
+.page-with-bg {
+  position: relative;
+  color: #fff;
 }
 
-.tech-border {
-  border: 1px solid rgba(52, 152, 219, 0.3);
-  border-radius: 10px;
+.page-with-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/src/assets/images/museum.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.4;
+  z-index: -2;
 }
 
-.tech-gradient-text {
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.page-with-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 122, 73, 0.7); /* 华农绿覆盖层 */
+  z-index: -1;
 }
 
-.hover-scale {
-  transition: transform 0.3s ease;
+/* 卡片效果优化 */
+.content-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.hover-scale:hover {
-  transform: scale(1.03);
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* 字体样式优化 */
+.text-light {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text-accent {
+  color: #B8E986; /* 浅黄绿色，在深色背景上突出 */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text-secondary {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
 }

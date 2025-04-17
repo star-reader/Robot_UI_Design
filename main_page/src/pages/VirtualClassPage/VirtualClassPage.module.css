@@ -1,0 +1,41 @@
+/* ...existing code... */
+
+.virtualClassPage {
+  min-height: 100vh;
+  padding: 120px 20px 60px;
+  /* 添加通用背景类 */
+  composes: page-with-bg from global;
+}
+
+/* 页面标题样式优化 */
+.pageHeader h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.pageHeader p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* 课程卡片样式优化 */
+.courseCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.courseCard:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+.courseCard h3 {
+  color: #B8E986; /* 浅黄绿色 */
+}
+
+/* ...existing code... */
