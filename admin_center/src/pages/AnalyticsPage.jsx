@@ -29,9 +29,112 @@ const WordCloudContainer = styled.div`
 
 const AnalyticsPage = () => {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({
+    questionDistribution: {
+      categories: ['专业选择', '入学申请', '奖学金', '住宿信息', '学费缴纳', '课程设置', '实习就业', '校园活动'],
+      values: [234, 310, 190, 150, 180, 220, 160, 120]
+    },
+    responseTimes: {
+      categories: ['0-5秒', '5-15秒', '15-30秒', '30-60秒', '60秒以上'],
+      values: [355, 210, 120, 75, 40]
+    },
+    userSatisfaction: {
+      categories: ['非常满意', '满意', '一般', '不满意', '非常不满意'],
+      values: [65, 25, 7, 2, 1]
+    },
+    timeDistribution: {
+      hours: Array.from({ length: 24 }, (_, i) => i),
+      values: [12, 8, 5, 3, 2, 5, 15, 30, 45, 60, 55, 48, 52, 60, 58, 48, 42, 38, 45, 40, 35, 25, 18, 15]
+    },
+    queryTrends: {
+      dates: ['10/1', '10/2', '10/3', '10/4', '10/5', '10/6', '10/7', '10/8', '10/9', '10/10'],
+      categories: ['专业选择', '入学申请', '奖学金', '校园生活'],
+      series: [
+        [20, 25, 18, 22, 15, 28, 24, 30, 32, 35],
+        [35, 32, 30, 38, 25, 40, 37, 45, 48, 50],
+        [15, 18, 12, 20, 22, 25, 18, 22, 24, 28],
+        [30, 28, 32, 35, 30, 38, 42, 35, 40, 45]
+      ]
+    },
+    wordCloud: [
+      { text: "入学申请流程", size: 28 },
+      { text: "专业选择", size: 25 },
+      { text: "奖学金", size: 22 },
+      { text: "录取标准", size: 20 },
+      { text: "学费", size: 19 },
+      { text: "住宿条件", size: 18 },
+      { text: "课程安排", size: 18 },
+      { text: "实习机会", size: 17 },
+      { text: "就业前景", size: 17 },
+      { text: "校园活动", size: 16 },
+      { text: "转专业", size: 15 },
+      { text: "国际交流", size: 15 },
+      { text: "研究生项目", size: 14 },
+      { text: "教授资质", size: 14 },
+      { text: "图书馆资源", size: 13 },
+      { text: "学生社团", size: 13 },
+      { text: "膳食选择", size: 12 },
+      { text: "运动设施", size: 12 },
+      { text: "校园安全", size: 11 },
+      { text: "WiFi覆盖", size: 11 },
+      { text: "交通便利性", size: 10 },
+      { text: "支持服务", size: 10 }
+    ]
+  });
   const [timeRange, setTimeRange] = useState('week');
   const wordCloudRef = useRef(null);
+  const mockData = {
+    questionDistribution: {
+      categories: ['专业选择', '入学申请', '奖学金', '住宿信息', '学费缴纳', '课程设置', '实习就业', '校园活动'],
+      values: [234, 310, 190, 150, 180, 220, 160, 120]
+    },
+    responseTimes: {
+      categories: ['0-5秒', '5-15秒', '15-30秒', '30-60秒', '60秒以上'],
+      values: [355, 210, 120, 75, 40]
+    },
+    userSatisfaction: {
+      categories: ['非常满意', '满意', '一般', '不满意', '非常不满意'],
+      values: [65, 25, 7, 2, 1]
+    },
+    timeDistribution: {
+      hours: Array.from({ length: 24 }, (_, i) => i),
+      values: [12, 8, 5, 3, 2, 5, 15, 30, 45, 60, 55, 48, 52, 60, 58, 48, 42, 38, 45, 40, 35, 25, 18, 15]
+    },
+    queryTrends: {
+      dates: ['10/1', '10/2', '10/3', '10/4', '10/5', '10/6', '10/7', '10/8', '10/9', '10/10'],
+      categories: ['专业选择', '入学申请', '奖学金', '校园生活'],
+      series: [
+        [20, 25, 18, 22, 15, 28, 24, 30, 32, 35],
+        [35, 32, 30, 38, 25, 40, 37, 45, 48, 50],
+        [15, 18, 12, 20, 22, 25, 18, 22, 24, 28],
+        [30, 28, 32, 35, 30, 38, 42, 35, 40, 45]
+      ]
+    },
+    wordCloud: [
+      { text: "入学申请流程", size: 28 },
+      { text: "专业选择", size: 25 },
+      { text: "奖学金", size: 22 },
+      { text: "录取标准", size: 20 },
+      { text: "学费", size: 19 },
+      { text: "住宿条件", size: 18 },
+      { text: "课程安排", size: 18 },
+      { text: "实习机会", size: 17 },
+      { text: "就业前景", size: 17 },
+      { text: "校园活动", size: 16 },
+      { text: "转专业", size: 15 },
+      { text: "国际交流", size: 15 },
+      { text: "研究生项目", size: 14 },
+      { text: "教授资质", size: 14 },
+      { text: "图书馆资源", size: 13 },
+      { text: "学生社团", size: 13 },
+      { text: "膳食选择", size: 12 },
+      { text: "运动设施", size: 12 },
+      { text: "校园安全", size: 11 },
+      { text: "WiFi覆盖", size: 11 },
+      { text: "交通便利性", size: 10 },
+      { text: "支持服务", size: 10 }
+    ]
+  }
   
   // 模拟从API获取数据
   useEffect(() => {
