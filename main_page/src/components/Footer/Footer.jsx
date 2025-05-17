@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
+import logo from '../../assets/images/scau_logo.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -8,7 +9,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.topSection}>
         <div className={styles.logoSection}>
-          <img src="/src/assets/images/scau_logo.png" alt="华南农业大学" className={styles.footerLogo} />
+          <img src={logo} alt="华南农业大学" className={styles.footerLogo} />
           <div className={styles.logoText}>
             <h3>华南农业大学</h3>
             <p>科技兴农，人才强校</p>

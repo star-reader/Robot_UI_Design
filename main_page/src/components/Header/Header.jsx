@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import styles from './Header.module.css'
+import logo from '../../assets/images/logo.svg'
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -47,7 +48,7 @@ const Header = () => {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.headerContent}>
         <div className={styles.logo}>
-          <img src="/src/assets/images/logo.svg" alt="华南农业大学" />
+          <img src={logo} alt="华南农业大学" />
           <div className={styles.logoText}>
             <h1>智能招生系统</h1>
             {/* <p>智能招生系统</p> */}

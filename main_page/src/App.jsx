@@ -11,7 +11,9 @@ import MajorMatchPage from './pages/MajorMatchPage/MajorMatchPage'
 // import ARCampusPage from './pages/ARCampusPage/ARCampusPage'
 import DataVisPage from './pages/DataVisPage/DataVisPage'
 // import VirtualClassPage from './pages/VirtualClassPage/VirtualClassPage'
+import AppPage from './pages/AppPage/AppPage'
 import styles from './App.module.css'
+import logo from './assets/images/scau_logo.png'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -24,7 +26,7 @@ function App() {
   if (loading) {
     return (
       <div className={styles.loadingContainer}>
-        <img src="/src/assets/images/scau_logo.png" alt="SCAU Logo" className={styles.loadingLogo} />
+        <img src={logo} alt="SCAU Logo" className={styles.loadingLogo} />
         <div className={styles.loadingBar}>
           <div className={styles.loadingProgress}></div>
         </div>
@@ -38,6 +40,7 @@ function App() {
       <main className={styles.mainContent}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path='/app' element={<AppPage/>} />
           <Route path="/consultation" element={<ConsultationPage />} />
           <Route path="/virtual-tour" element={<VirtualTourPage />} />
           <Route path="/admissions" element={<AdmissionsPage />} />

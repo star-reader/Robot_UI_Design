@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './HomePage.module.css'
+import logo from '../../assets/images/scau.png'
 
 const HomePage = () => {
   const [heroLoaded, setHeroLoaded] = useState(false)
@@ -46,20 +47,22 @@ const HomePage = () => {
 
   useEffect(() => {
     const img = new Image()
-    img.src = '/src/assets/images/scau.png'
+    img.src = logo
     img.onload = () => setHeroLoaded(true)
   }, [])
 
   return (
     <div className={styles.homePage}>
       {/* Hero Section */}
-      <section className={`${styles.hero} ${heroLoaded ? styles.loaded : ''}`}>
+      <section 
+        className={`${styles.hero} ${heroLoaded ? styles.loaded : ''}`}>
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
           <h1 className={styles.mainTitle}>
             <span>华南农业大学</span>
             <span className={styles.gradientText}>智能招生系统</span>
           </h1>
+          <p className={styles.subTitleBig}>国家“双一流”建设高校</p>
           <p className={styles.subTitle}>修德、博学、求实、创新</p>
           
           <div className={styles.heroBtns}>
