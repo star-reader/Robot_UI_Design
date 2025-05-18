@@ -8,7 +8,6 @@
     overflow: visible;
     background-size: cover;
     background-repeat: no-repeat;
-    /* transition: background-image 0.5s ease-in-out; */
     border-radius: 50%;
     z-index: 20;
 }
